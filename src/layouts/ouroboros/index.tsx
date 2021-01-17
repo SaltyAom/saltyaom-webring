@@ -84,9 +84,6 @@ const Ouroboros: OuroborosComponent = ({ children, links }) => {
                         animate="animated"
                         transition={transition}
                         variants={variants}
-                        style={{
-                            zIndex: -1
-                        }}
                     >
                         <div
                             className={tw`absolute block border-solid border border-gray-100 rounded-full`}
