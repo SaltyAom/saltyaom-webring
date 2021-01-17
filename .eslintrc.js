@@ -32,7 +32,8 @@ module.exports = {
         'react/jsx-closing-tag-location': 0,
         'jsx-a11y/anchor-is-valid': 0,
         'import/extensions': 0,
-        'consistent-return': 0
+        'consistent-return': 0,
+        'no-plusplus': 0
     },
     ignorePatterns: [
         '__tests__',
