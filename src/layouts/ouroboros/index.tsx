@@ -1,8 +1,9 @@
-import { useEffect, useMemo } from 'react'
+import { useEffect, useMemo, useState } from 'react'
 
 import { motion } from 'framer-motion'
 
 import { tw } from 'twind'
+import { css } from 'twind/css'
 
 import { useAtom } from 'jotai'
 import { linksAtom, selectedAtom } from '@models'
@@ -18,7 +19,15 @@ import Content from './content'
 
 import { OuroborosComponent } from './types'
 
+const willChange = css({
+    '&': {
+        willChange: 'transform, opacity'
+    }
+})
+
 const Ouroboros: OuroborosComponent = ({ children, links }) => {
+    let [screenWidth, updateScreenWidth] = useState(0)
+
     let positions = getCirclePosition(links.length)
     let rotations = getRotation(links.length)
 
@@ -30,10 +39,17 @@ const Ouroboros: OuroborosComponent = ({ children, links }) => {
         updateSelected(randomBetween(0, links.length - 1))
     }, [links])
 
+    useEffect(() => {
+        updateScreenWidth(window.innerWidth)
+    }, [])
+
     let variants = useMemo(
         () => ({
-            start: {
+            start: screenWidth >= 768 ? {
                 scale: 2,
+                opacity: 0
+            } : {
+                scale: 1,
                 opacity: 0
             },
             animated: {
@@ -41,7 +57,7 @@ const Ouroboros: OuroborosComponent = ({ children, links }) => {
                 opacity: 1
             }
         }),
-        []
+        [screenWidth]
     )
 
     let transition = useMemo(
@@ -67,14 +83,13 @@ const Ouroboros: OuroborosComponent = ({ children, links }) => {
                         </Content>
                     ))}
                     <motion.div
-                        className={tw`absolute`}
+                        className={tw`absolute ${willChange}`}
                         initial="start"
                         animate="animated"
                         transition={transition}
                         variants={variants}
                         style={{
-                            zIndex: -1,
-                            willChange: 'transform, opacity'
+                            zIndex: -1
                         }}
                     >
                         <div
@@ -94,10 +109,9 @@ const Ouroboros: OuroborosComponent = ({ children, links }) => {
                 animate="animated"
                 transition={transition}
                 variants={variants}
-                className={tw`absolute flex flex-row justify-center items-center w-full h-screen`}
+                className={tw`absolute flex flex-row justify-center items-center w-full h-screen ${willChange}`}
                 style={{
-                    zIndex: -1,
-                    willChange: 'transform, opacity'
+                    zIndex: -1
                 }}
             >
                 {children}
