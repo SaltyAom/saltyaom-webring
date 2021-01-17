@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react'
+import { useEffect, useMemo } from 'react'
 
 import { motion } from 'framer-motion'
 
@@ -19,15 +19,18 @@ import Content from './content'
 
 import { OuroborosComponent } from './types'
 
+import './ouroboros.sass'
+
 const willChange = css({
     '&': {
-        willChange: 'transform, opacity'
+        willChange: 'transform, opacity',
+        '@media (max-width: 767.9px)': {
+            transform: 'scale(1) !important',
+        }
     }
 })
 
 const Ouroboros: OuroborosComponent = ({ children, links }) => {
-    let [screenWidth, updateScreenWidth] = useState(0)
-
     let positions = getCirclePosition(links.length)
     let rotations = getRotation(links.length)
 
@@ -39,17 +42,10 @@ const Ouroboros: OuroborosComponent = ({ children, links }) => {
         updateSelected(randomBetween(0, links.length - 1))
     }, [links])
 
-    useEffect(() => {
-        updateScreenWidth(window.innerWidth)
-    }, [])
-
     let variants = useMemo(
         () => ({
-            start: screenWidth >= 768 ? {
+            start: {
                 scale: 2,
-                opacity: 0
-            } : {
-                scale: 1,
                 opacity: 0
             },
             animated: {
@@ -57,7 +53,7 @@ const Ouroboros: OuroborosComponent = ({ children, links }) => {
                 opacity: 1
             }
         }),
-        [screenWidth]
+        []
     )
 
     let transition = useMemo(
@@ -71,7 +67,7 @@ const Ouroboros: OuroborosComponent = ({ children, links }) => {
     return (
         <>
             <div className={tw`absolute hidden md:block inset-1/2`}>
-                <div className={tw`block relative`}>
+                <div id="ouroboros" className={tw`block relative`}>
                     {links.map((link, index) => (
                         <Content
                             key={link}
