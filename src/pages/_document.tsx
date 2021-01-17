@@ -9,19 +9,22 @@ class MyDocument extends Document {
             <Html lang="th">
                 <Head>
                     <meta
-                        http-equiv="content-type"
+                        httpEquiv="content-type"
                         content="text/html, charset=utf8"
                     />
                     <meta
                         name="viewport"
-                        content="width=device-width,initial-scale=1, minimum-scale=1 , maximum-scale=1, user-scalable=no, viewport-fit=cover"
+                        content="width=device-width, initial-scale=1"
                     />
                     <meta
-                        http-equiv="X-UA-Compatible"
+                        httpEquiv="X-UA-Compatible"
                         content="IE=edge,chrome=1"
                     />
                     <meta name="title" content="Webring" />
-                    <meta name="description" content="วงแหวนเว็บ แห่งนี้สร้างขึ้นเพื่อส่งเสริมให้ศิลปิน นักออกแบบ และนักพัฒนาชาวไทย สร้างเว็บไซต์ของตัวเองและแบ่งปันการเข้าชมซึ่งกันและกัน" />
+                    <meta
+                        name="description"
+                        content="วงแหวนเว็บ แห่งนี้สร้างขึ้นเพื่อส่งเสริมให้ศิลปิน นักออกแบบ และนักพัฒนาชาวไทย สร้างเว็บไซต์ของตัวเองและแบ่งปันการเข้าชมซึ่งกันและกัน"
+                    />
                     <meta name="author" content="SaltyAom" />
                     <link rel="icon" href="/webring.svg" />
                     <link rel="shortcut icon" href="/webring.svg" />
@@ -43,10 +46,7 @@ class MyDocument extends Document {
                     <meta property="og:locale" content="th_TH" />
                     <meta property="og:type" content="website" />
                     <meta name="twitter:card" content="summary_large_image" />
-                    <meta
-                        name="twitter:title"
-                        content="Webring"
-                    />
+                    <meta name="twitter:title" content="Webring" />
                     <meta
                         name="twitter:description"
                         content="วงแหวนเว็บ แห่งนี้สร้างขึ้นเพื่อส่งเสริมให้ศิลปิน นักออกแบบ และนักพัฒนาชาวไทย สร้างเว็บไซต์ของตัวเองและแบ่งปันการเข้าชมซึ่งกันและกัน"
@@ -56,13 +56,11 @@ class MyDocument extends Document {
                         name="twitter:image"
                         content="https://webring.saltyaom.com/webring.jpg"
                     />
-                    <meta
-                        name="twitter:creator"
-                        content="@saltyAom"
-                    />
+                    <meta name="twitter:creator" content="@saltyAom" />
                 </Head>
                 {isProduction ? (
                     <head
+                        // eslint-disable-next-line react/no-danger
                         dangerouslySetInnerHTML={{
                             __html: getStyleTag(sheet).replace(
                                 '__twind',

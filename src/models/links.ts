@@ -1,5 +1,5 @@
 import { atom } from "jotai"
 
-let linksAtom = atom<string[]>([])
+const linksAtom = atom<string[]>([])
 
 export default linksAtom

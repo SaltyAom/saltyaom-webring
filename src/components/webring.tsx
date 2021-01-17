@@ -6,8 +6,8 @@ const Webring = () => (
         xmlns="http://www.w3.org/2000/svg"
     >
         <path
-            fill-rule="evenodd"
-            clip-rule="evenodd"
+            fillRule="evenodd"
+            clipRule="evenodd"
             d="M53 128.8l-16-8.2a192 192 0 1094.7-88.9l7.1 16.6A174 174 0 1153 128.8z"
             fill="currentColor"
         />

@@ -41,6 +41,7 @@ const App = ({ Component, pageProps }: AppProps) => {
             {isProduction ? (
                 <Head>
                     <style
+                        // eslint-disable-next-line react/no-danger
                         dangerouslySetInnerHTML={{
                             __html: styleTag
                         }}

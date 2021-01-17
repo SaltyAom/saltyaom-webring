@@ -58,7 +58,7 @@ const Ouroboros: OuroborosComponent = ({ children, links }) => {
                 <div className={tw`block relative`}>
                     {links.map((link, index) => (
                         <Content
-                            key={index}
+                            key={link}
                             index={index}
                             position={positions[index]}
                             rotation={rotations[index]}
@@ -102,15 +102,18 @@ const Ouroboros: OuroborosComponent = ({ children, links }) => {
             >
                 {children}
             </motion.main>
-            <div className={tw`flex flex-col px-8 pb-12 md:hidden`} style={{
-                paddingTop: '90vh'
-            }}>
-                {links.map((link, index) => (
+            <div
+                className={tw`flex flex-col px-8 pb-12 md:hidden`}
+                style={{
+                    paddingTop: '90vh'
+                }}
+            >
+                {links.map((link) => (
                     <a
-                        key={index}
+                        key={link}
                         href={link}
                         target="_blank"
-                        rel="norefferer noreopener"
+                        rel="noreferrer noreopener"
                         className={tw`py-4 text(xl gray-400 no-underline) border-solid border-0 border-b-1 border-gray-100`}
                     >
                         {getDomainName(link)}

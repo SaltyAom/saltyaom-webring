@@ -6,6 +6,7 @@ import { getString, MATCH_LIST, matchAllHref } from '@services'
 import { Ouroboros } from '@layouts'
 
 import { Display } from '@components'
+
 interface Props {
     links: string[]
 }

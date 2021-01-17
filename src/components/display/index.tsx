@@ -26,18 +26,16 @@ const Display = () => {
             >Webring</h2>
             <a
                 className={tw`font-light text(2xl gray-600 hover:blue-400 focus:blue-400) no-underline transition-colors outline-none`}
-                role="heading"
-                aria-level={1}
                 href={link}
                 target="_blank"
-                rel="norefferer noreopener"
+                rel="noreferrer noreopener"
             >
                 {web}
             </a>
             <a
                 href="https://webring.wonderful.software"
                 target="_blank"
-                rel="norefferer noreopener"
+                rel="noreferrer noreopener"
                 className={tw`absolute flex justify-center items-center text(gray-300 hover:blue-400 focus:blue-400) transition-colors cursor-pointer outline-none`}
                 aria-label="webring.wonderful.software.com"
                 style={{
