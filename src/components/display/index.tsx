@@ -20,7 +20,7 @@ const Display = () => {
     return (
         <>
             <h2
-                className={tw`absolute text(sm gray-300) font-normal select-none`}
+                className={tw`z-20 absolute text(sm gray-300) font-normal select-none`}
                 style={{
                     top: `calc(50vh - 160px)`
                 }}

@@ -25,7 +25,7 @@ const willChange = css({
     '&': {
         willChange: 'transform, opacity',
         '@media (max-width: 767.9px)': {
-            transform: 'scale(1) !important',
+            transform: 'scale(1) !important'
         }
     }
 })
@@ -78,24 +78,28 @@ const Ouroboros: OuroborosComponent = ({ children, links }) => {
                             {link}
                         </Content>
                     ))}
-                    <motion.div
-                        className={tw`absolute ${willChange}`}
-                        initial="start"
-                        animate="animated"
-                        transition={transition}
-                        variants={variants}
-                    >
-                        <div
-                            className={tw`absolute block border-solid border border-gray-100 rounded-full`}
-                            style={{
-                                top: `calc(50% - 190px)`,
-                                left: `calc(50% - 190px)`,
-                                width: 380,
-                                height: 380
-                            }}
-                        />
-                    </motion.div>
                 </div>
+                <motion.div
+                    className={tw`absolute ${willChange}`}
+                    initial="start"
+                    animate="animated"
+                    transition={transition}
+                    variants={variants}
+                    style={{
+                        zIndex: -100
+                    }}
+                >
+                    <div
+                        className={tw`absolute block border-solid border border-gray-100 rounded-full`}
+                        style={{
+                            top: `calc(50% - 190px)`,
+                            left: `calc(50% - 190px)`,
+                            width: 380,
+                            height: 380,
+                            zIndex: -100
+                        }}
+                    />
+                </motion.div>
             </div>
             <motion.main
                 initial="start"
