@@ -1,12 +1,13 @@
 import { useMemo } from 'react'
 
-import { linksAtom, selectedAtom } from '@models'
 import { useAtom } from 'jotai'
+import { linksAtom, selectedAtom } from '@models'
 
 import { tw } from 'twind'
-import { getDomainName } from '@services'
 
 import { Webring } from '@components'
+
+import { getDomainName } from '@services'
 
 const Display = () => {
     let [links] = useAtom(linksAtom)

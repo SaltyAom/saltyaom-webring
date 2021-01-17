@@ -1,4 +1,4 @@
-import { FunctionComponent } from "react"
+import { FunctionComponent } from 'react'
 
 export interface OuroborosProps {
     links: string[]

@@ -45,6 +45,7 @@ module.exports = withPlugins(
         ]
     ],
     {
+        target: "serverless",
         async rewrites() {
             return [
                 {

@@ -2,10 +2,11 @@ import { FunctionComponent } from 'react'
 
 import { GetStaticProps } from 'next'
 
-import { getString, MATCH_LIST, matchAllHref } from '@services'
 import { Ouroboros } from '@layouts'
 
 import { Display } from '@components'
+
+import { getString, MATCH_LIST, matchAllHref } from '@services'
 
 interface Props {
     links: string[]

@@ -1,6 +1,7 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document'
 
 import { getStyleTag } from 'twind/sheets'
+
 import { isProduction, sheet } from '@services'
 
 class MyDocument extends Document {
