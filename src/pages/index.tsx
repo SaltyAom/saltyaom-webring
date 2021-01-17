@@ -1,5 +1,7 @@
 import { FunctionComponent } from 'react'
 
+import Head from 'next/head'
+
 import { GetStaticProps } from 'next'
 
 import { Ouroboros } from '@layouts'
@@ -13,9 +15,14 @@ interface Props {
 }
 
 const Landing: FunctionComponent<Props> = ({ links }) => (
-    <Ouroboros links={links}>
-        <Display />
-    </Ouroboros>
+    <>
+        <Head>
+            <title>Webring - Ouroboros</title>
+        </Head>
+        <Ouroboros links={links}>
+            <Display />
+        </Ouroboros>
+    </>
 )
 
 export const getStaticProps: GetStaticProps<Props> = async () => {
