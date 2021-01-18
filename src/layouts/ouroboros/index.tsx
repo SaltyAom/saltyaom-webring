@@ -25,6 +25,7 @@ const willChange = css({
     '&': {
         willChange: 'transform, opacity',
         '@media (max-width: 767.9px)': {
+            opacity: '1 !important',
             transform: 'scale(1) !important'
         }
     }
