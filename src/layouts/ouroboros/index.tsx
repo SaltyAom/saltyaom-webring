@@ -68,7 +68,7 @@ const Ouroboros: OuroborosComponent = ({ children, links }) => {
     return (
         <>
             <div className={tw`fixed hidden md:block inset-1/2`}>
-                <div id="ouroboros" className={tw`block relative`}>
+                <div id="ouroboros">
                     {links.map((link, index) => (
                         <Content
                             key={link}
@@ -80,34 +80,34 @@ const Ouroboros: OuroborosComponent = ({ children, links }) => {
                         </Content>
                     ))}
                 </div>
-                <motion.div
-                    className={tw`absolute ${willChange}`}
-                    initial="start"
-                    animate="animated"
-                    transition={transition}
-                    variants={variants}
-                    style={{
-                        zIndex: -100
-                    }}
-                >
-                    <div
-                        className={tw`absolute block border-solid border border-gray-100 rounded-full`}
-                        style={{
-                            top: `calc(50% - 190px)`,
-                            left: `calc(50% - 190px)`,
-                            width: 380,
-                            height: 380,
-                            zIndex: -100
-                        }}
-                    />
-                </motion.div>
             </div>
+            <motion.div
+                className={tw`absolute inset-1/2 ${willChange}`}
+                initial="start"
+                animate="animated"
+                transition={transition}
+                variants={variants}
+                style={{
+                    zIndex: -100
+                }}
+            >
+                <div
+                    className={tw`absolute block border-solid border border-gray-100 rounded-full`}
+                    style={{
+                        top: `calc(50% - 190px)`,
+                        left: `calc(50% - 190px)`,
+                        width: 380,
+                        height: 380,
+                    }}
+                />
+            </motion.div>
+
             <motion.main
                 initial="start"
                 animate="animated"
                 transition={transition}
                 variants={variants}
-                className={tw`absolute md:fixed flex flex-row justify-center items-center w-full h-screen ${willChange}`}
+                className={tw`absolute z-0 md:fixed flex flex-row justify-center items-center w-full h-screen ${willChange}`}
                 style={{
                     zIndex: -1
                 }}

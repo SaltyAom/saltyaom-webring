@@ -1,7 +1,6 @@
-import { useCallback, useRef, useMemo, Ref } from 'react'
+import { useCallback, useMemo } from 'react'
 
 import Head from 'next/head'
-import dynamic from 'next/dynamic'
 
 import { useAtom } from 'jotai'
 import { selectedAtom } from '@models'
@@ -19,6 +18,14 @@ import { ContentComponent } from './types'
 const willChange = css({
     '&': {
         willChange: 'top, left, transform'
+    }
+})
+
+const hoverable = css({
+    '&': {
+        '-webkit-tap-highlight-color': 'transparent',
+        '-webkit-user-select': 'none',
+        '-webkit-touch-callout': 'none'
     }
 })
 
@@ -49,7 +56,7 @@ const Content: ContentComponent = ({ position, rotation, children, index }) => {
                 <link rel="preconnect" href={web} />
             </Head>
             <div
-                className={tw`absolute`}
+                className={tw`absolute z-30`}
                 style={{
                     top: position[1],
                     left: position[0],
@@ -64,7 +71,7 @@ const Content: ContentComponent = ({ position, rotation, children, index }) => {
                         selected === index
                             ? 'text(blue-400 focus:blue-400) pl-8'
                             : ''
-                    } ${willChange}`}
+                    } ${willChange} ${hoverable}`}
                     style={{
                         top: `calc(-1 * (3em - ${height / 2}px))`,
                         height

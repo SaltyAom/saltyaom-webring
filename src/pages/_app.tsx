@@ -22,7 +22,7 @@ const App = ({ Component, pageProps }: AppProps) => {
             passive: true
         })
 
-        document.addEventListener('touchmove', () => null, {
+        document.addEventListener('touchend', () => null, {
             passive: true
         })
     }, [])
