@@ -67,7 +67,7 @@ const Ouroboros: OuroborosComponent = ({ children, links }) => {
 
     return (
         <>
-            <div className={tw`absolute hidden md:block inset-1/2`}>
+            <div className={tw`fixed hidden md:block inset-1/2`}>
                 <div id="ouroboros" className={tw`block relative`}>
                     {links.map((link, index) => (
                         <Content
