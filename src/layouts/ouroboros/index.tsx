@@ -107,7 +107,7 @@ const Ouroboros: OuroborosComponent = ({ children, links }) => {
                 animate="animated"
                 transition={transition}
                 variants={variants}
-                className={tw`absolute flex flex-row justify-center items-center w-full h-screen ${willChange}`}
+                className={tw`absolute md:fixed flex flex-row justify-center items-center w-full h-screen ${willChange}`}
                 style={{
                     zIndex: -1
                 }}
