@@ -57,8 +57,9 @@ const Content: ContentComponent = ({ position, rotation, children, index }) => {
             >
                 <button
                     onClick={showCurrentLink}
+                    title={web}
                     type="button"
-                    className={tw`absolute appearance-none flex flex-row justify-start items-center z-10 m-0 py-12 pr-8 hover:pl-8 focus:pl-8 text(lg gray-300 hover:blue-400 focus:blue-300) whitespace-nowrap bg-transparent border-none outline-none transition-ouroboros cursor-pointer ${
+                    className={tw`absolute appearance-none flex flex-row justify-start items-center z-10 m-0 py-12 pr-8 pl-8(hover:& focus:&) text(lg gray-300 hover:blue-400 focus:blue-300) whitespace-nowrap bg-transparent border-none outline-none transition-ouroboros cursor-pointer ${
                         selected === index
                             ? 'text(blue-400 focus:blue-400) pl-8'
                             : ''
