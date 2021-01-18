@@ -21,6 +21,10 @@ const App = ({ Component, pageProps }: AppProps) => {
         document.addEventListener('touchstart', () => null, {
             passive: true
         })
+
+        document.addEventListener('touchmove', () => null, {
+            passive: true
+        })
     }, [])
 
     useEffect(() => {
