@@ -81,8 +81,9 @@ const Ouroboros: OuroborosComponent = ({ children, links }) => {
                     ))}
                 </div>
             </div>
+
             <motion.div
-                className={tw`absolute inset-1/2 ${willChange}`}
+                className={tw`fixed inset-1/2 ${willChange}`}
                 initial="start"
                 animate="animated"
                 transition={transition}
